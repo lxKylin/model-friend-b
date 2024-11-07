@@ -7,8 +7,9 @@ import { MongooseModule } from '@nestjs/mongoose';
 
 import { SchemasModule } from './schemas.module';
 
-import { AppController } from '@/controllers/app.controller';
-import { AppService } from '@/services/app.service';
+import { PaintController } from '@/controllers/paint.controller';
+
+import { PaintService } from '@/services/paint.service';
 
 @Module({
   imports: [
@@ -16,7 +17,7 @@ import { AppService } from '@/services/app.service';
     MongooseModule.forRoot(process.env.MONGO_URI || ''),
     SchemasModule
   ],
-  controllers: [AppController],
-  providers: [AppService]
+  controllers: [PaintController],
+  providers: [PaintService]
 })
 export class AppModule {}
